@@ -1,0 +1,81 @@
+SQL> SELECT * FFROM EMPLOYEES;
+SELECT * FFROM EMPLOYEES
+         *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> SELECT * FROM EMPLOYEES;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+
+SQL> SELECT SSN,ENAME,ADDRESS,SALARY FROM EMPLOYEES ORDER BY SALARY;
+
+       SSN ENAME                ADDRESS                  SALARY                                                                                                                                                                                                                                             
+---------- -------------------- -------------------- ----------                                                                                                                                                                                                                                             
+     18014 BHAVYAA              ABC                         100                                                                                                                                                                                                                                             
+     18009 ANKUR                ABC                         100                                                                                                                                                                                                                                             
+     18005 ABHISHEK             X5 LONDON STREETS         96000                                                                                                                                                                                                                                             
+     18021 ISHANT               KINGs STREET DUBAI       900000                                                                                                                                                                                                                                             
+
+SQL> SELECT SSN,ENAME,ADDRESS,SALARY FROM EMPLOYEES ORDER BY SSN;
+
+       SSN ENAME                ADDRESS                  SALARY                                                                                                                                                                                                                                             
+---------- -------------------- -------------------- ----------                                                                                                                                                                                                                                             
+     18005 ABHISHEK             X5 LONDON STREETS         96000                                                                                                                                                                                                                                             
+     18009 ANKUR                ABC                         100                                                                                                                                                                                                                                             
+     18014 BHAVYAA              ABC                         100                                                                                                                                                                                                                                             
+     18021 ISHANT               KINGs STREET DUBAI       900000                                                                                                                                                                                                                                             
+
+SQL> SELECT SSN,ENAME,ADDRESS,SALARY FROM EMPLOYEES ORDER BY SSN DESC;
+
+       SSN ENAME                ADDRESS                  SALARY                                                                                                                                                                                                                                             
+---------- -------------------- -------------------- ----------                                                                                                                                                                                                                                             
+     18021 ISHANT               KINGs STREET DUBAI       900000                                                                                                                                                                                                                                             
+     18014 BHAVYAA              ABC                         100                                                                                                                                                                                                                                             
+     18009 ANKUR                ABC                         100                                                                                                                                                                                                                                             
+     18005 ABHISHEK             X5 LONDON STREETS         96000                                                                                                                                                                                                                                             
+
+SQL> SELECT ADDRESS FROM EMPLOYEES GROUP BY SALARY;
+SELECT ADDRESS FROM EMPLOYEES GROUP BY SALARY
+       *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> SELECT ADDRESS FROM EMPLOYEES GROUP BY ADDRESS;
+
+ADDRESS                                                                                                                                                                                                                                                                                                     
+--------------------                                                                                                                                                                                                                                                                                        
+KINGs STREET DUBAI                                                                                                                                                                                                                                                                                          
+ABC                                                                                                                                                                                                                                                                                                         
+X5 LONDON STREETS                                                                                                                                                                                                                                                                                           
+
+SQL> SELECT ADDRESS ,SUM(SALARY) FROM EMPLOYEES GROUP BY ADDRESS;
+
+ADDRESS              SUM(SALARY)                                                                                                                                                                                                                                                                            
+-------------------- -----------                                                                                                                                                                                                                                                                            
+KINGs STREET DUBAI        900000                                                                                                                                                                                                                                                                            
+ABC                          200                                                                                                                                                                                                                                                                            
+X5 LONDON STREETS          96000                                                                                                                                                                                                                                                                            
+
+SQL> SELECT ADDRESS,SSN,DEPARTMENT,SUM(SALARY) FROM EMPLOYEES GROUP BY ADDRESS,SSN,DEPARTMENT HAVING SUM(SALARY>500);
+SELECT ADDRESS,SSN,DEPARTMENT,SUM(SALARY) FROM EMPLOYEES GROUP BY ADDRESS,SSN,DEPARTMENT HAVING SUM(SALARY>500)
+                                                                                                          *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> SELECT ADDRESS,SSN,DEPARTMENT,SUM(SALARY) FROM EMPLOYEES GROUP BY ADDRESS,SSN,DEPARTMENT HAVING SUM(SALARY)>500;
+
+ADDRESS                     SSN DEPARTMENT           SUM(SALARY)                                                                                                                                                                                                                                            
+-------------------- ---------- -------------------- -----------                                                                                                                                                                                                                                            
+KINGs STREET DUBAI        18021 COMPUTING                 900000                                                                                                                                                                                                                                            
+X5 LONDON STREETS         18005 COMPUTER                   96000                                                                                                                                                                                                                                            
+
+SQL> SPOOL OFF;

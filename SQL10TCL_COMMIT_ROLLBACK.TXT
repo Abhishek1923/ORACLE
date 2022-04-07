@@ -1,0 +1,67 @@
+SQL> SELECT * FROM EMPLOYEES;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18002 AARYAN               THE TAJ ESCORTS      SALES                    100000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+
+SQL> DELETE FROM EMPLOYEES WHERE DEPATMENT='SALES';
+DELETE FROM EMPLOYEES WHERE DEPATMENT='SALES'
+                            *
+ERROR at line 1:
+ORA-00904: "DEPATMENT": invalid identifier 
+
+
+SQL> DELETE FROM EMPLOYEES WHERE DEPATMENT=SALES;
+DELETE FROM EMPLOYEES WHERE DEPATMENT=SALES
+                                      *
+ERROR at line 1:
+ORA-00904: "SALES": invalid identifier 
+
+
+SQL> DELETE FROM EMPLOYEES WHERE DEPARTMENT='SALES';
+
+1 row deleted.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SELECT * FROM EMPLOYEES;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+
+SQL> DELETE EMPLOYEES WHERE SALARY=96000;
+
+1 row deleted.
+
+SQL> SELECT * FROM EMPLOYEES;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+
+SQL> ROLLBACK;
+
+Rollback complete.
+
+SQL> SELECT * FROM EMPLOYEES;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+
+SQL> SPOOL OFF;

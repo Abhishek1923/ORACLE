@@ -1,0 +1,71 @@
+SQL> SELECT * FROM EMPLOYEES;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+
+SQL> SELECT ENAME,ADDRESS FROM EMPLOYEES WHERE SALARY BETWEEN 100000 AND 100;
+
+no rows selected
+
+SQL> SELECT ENAME,ADDRESS FROM EMPLOYEES WHERE SALARY BETWEEN 100 AND 100000;
+
+ENAME                ADDRESS                                                                                                                                                                                                                                                                                
+-------------------- --------------------                                                                                                                                                                                                                                                                   
+ABHISHEK             X5 LONDON STREETS                                                                                                                                                                                                                                                                      
+BHAVYAA              ABC                                                                                                                                                                                                                                                                                    
+ANKUR                ABC                                                                                                                                                                                                                                                                                    
+
+SQL> SELECT ,SSNENAME,ADDRESS,DEPARTMENT FROM EMPLOYEES WHERE SALARY IN(99,96000);
+SELECT ,SSNENAME,ADDRESS,DEPARTMENT FROM EMPLOYEES WHERE SALARY IN(99,96000)
+       *
+ERROR at line 1:
+ORA-00936: missing expression 
+
+
+SQL> SELECT SSN,ENAME,ADDRESS,DEPARTMENT FROM EMPLOYEES WHERE SALARY IN(99,96000);
+
+       SSN ENAME                ADDRESS              DEPARTMENT                                                                                                                                                                                                                                             
+---------- -------------------- -------------------- --------------------                                                                                                                                                                                                                                   
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                                                                                                                                                                                                                                               
+
+SQL> SELECT SSN,ENAME,ADDRESS,DEPARTMENT FROM EMPLOYEES WHERE SALARY LIKE 100;
+
+       SSN ENAME                ADDRESS              DEPARTMENT                                                                                                                                                                                                                                             
+---------- -------------------- -------------------- --------------------                                                                                                                                                                                                                                   
+     18014 BHAVYAA              ABC                  MARKETING                                                                                                                                                                                                                                              
+     18009 ANKUR                ABC                  MARKETING                                                                                                                                                                                                                                              
+
+SQL> SELECT SSN,ENAME,ADDRESS,DEPARTMENT FROM EMPLOYEES WHERE SALARY LIKE 96000;
+
+       SSN ENAME                ADDRESS              DEPARTMENT                                                                                                                                                                                                                                             
+---------- -------------------- -------------------- --------------------                                                                                                                                                                                                                                   
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                                                                                                                                                                                                                                               
+
+SQL> SELECT SSN,ENAME,ADDRESS,DEPARTMENT FROM EMPLOYEES WHERE ENAME LIKE '%A';
+
+       SSN ENAME                ADDRESS              DEPARTMENT                                                                                                                                                                                                                                             
+---------- -------------------- -------------------- --------------------                                                                                                                                                                                                                                   
+     18014 BHAVYAA              ABC                  MARKETING                                                                                                                                                                                                                                              
+
+SQL> SELECT SSN,ENAME,ADDRESS,DEPARTMENT FROM EMPLOYEES WHERE ENAME LIKE 'A%';
+
+       SSN ENAME                ADDRESS              DEPARTMENT                                                                                                                                                                                                                                             
+---------- -------------------- -------------------- --------------------                                                                                                                                                                                                                                   
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                                                                                                                                                                                                                                               
+     18009 ANKUR                ABC                  MARKETING                                                                                                                                                                                                                                              
+
+SQL> SELECT SSN,ENAME,ADDRESS,DEPARTMENT FROM EMPLOYEES WHERE ENAME LIKE 'AB%';
+
+       SSN ENAME                ADDRESS              DEPARTMENT                                                                                                                                                                                                                                             
+---------- -------------------- -------------------- --------------------                                                                                                                                                                                                                                   
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                                                                                                                                                                                                                                               
+
+SQL> SELECT SSN,ENAME,ADDRESS,DEPARTMENT FROM EMPLOYEES WHERE ENAME LIKE 'A%A%';
+
+no rows selected
+
+SQL> SPOOL OFF;

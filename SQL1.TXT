@@ -1,0 +1,55 @@
+SQL> CREATE TABLE STUDENTS(NAME VARCHAR(20),AGE NUMBER(4),MARKS1 NUMBER(4),MARKS2 NUMBER(4));
+
+Table created.
+
+SQL> DESC STUDENTS;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ NAME                                               VARCHAR2(20)
+ AGE                                                NUMBER(4)
+ MARKS1                                             NUMBER(4)
+ MARKS2                                             NUMBER(4)
+
+SQL> ALTER TABLE STUDENTS
+  2  ADD (TOTAL NUMBER(4))
+  3  ;
+
+Table altered.
+
+SQL> DESC STUDENTS;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ NAME                                               VARCHAR2(20)
+ AGE                                                NUMBER(4)
+ MARKS1                                             NUMBER(4)
+ MARKS2                                             NUMBER(4)
+ TOTAL                                              NUMBER(4)
+
+SQL> RENAME STUDENTS TO EMPLOYEES;
+
+Table renamed.
+
+SQL> DESC STUDENTS;
+ERROR:
+ORA-04043: object STUDENTS does not exist 
+
+
+SQL> DESC EMPLOYEES;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ NAME                                               VARCHAR2(20)
+ AGE                                                NUMBER(4)
+ MARKS1                                             NUMBER(4)
+ MARKS2                                             NUMBER(4)
+ TOTAL                                              NUMBER(4)
+
+SQL> DROP TABLE EMPLOYEES;
+
+Table dropped.
+
+SQL> DESC EMPLOYEES;
+ERROR:
+ORA-04043: object EMPLOYEES does not exist 
+
+
+SQL> SPOOL OFF;

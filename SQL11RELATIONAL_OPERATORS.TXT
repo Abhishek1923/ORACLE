@@ -1,0 +1,61 @@
+SQL> SELECT * FROM EMPLOYEES;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+
+SQL> SELECT ENMAE,ADDRESS,DEPARTMENT WHERE SALARY=100;
+SELECT ENMAE,ADDRESS,DEPARTMENT WHERE SALARY=100
+                                *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> SELECT ENMAE,ADDRESS,DEPARTMENT FRO EMPLOYEES WHERE SALARY=100;
+SELECT ENMAE,ADDRESS,DEPARTMENT FRO EMPLOYEES WHERE SALARY=100
+                                    *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> SELECT ENMAE,ADDRESS,DEPARTMENT FROM EMPLOYEES WHERE SALARY=100;
+SELECT ENMAE,ADDRESS,DEPARTMENT FROM EMPLOYEES WHERE SALARY=100
+       *
+ERROR at line 1:
+ORA-00904: "ENMAE": invalid identifier 
+
+
+SQL> SELECT ENAME,ADDRESS,DEPARTMENT FROM EMPLOYEES WHERE SALARY=100;
+
+ENAME                ADDRESS              DEPARTMENT                                                                                                                                                                                                                                                        
+-------------------- -------------------- --------------------                                                                                                                                                                                                                                              
+BHAVYAA              ABC                  MARKETING                                                                                                                                                                                                                                                         
+ANKUR                ABC                  MARKETING                                                                                                                                                                                                                                                         
+
+SQL> SELECT ENAME,ADDRESS,DEPARTMENT FROM EMPLOYEES WHERE SALARY!=100;
+
+ENAME                ADDRESS              DEPARTMENT                                                                                                                                                                                                                                                        
+-------------------- -------------------- --------------------                                                                                                                                                                                                                                              
+ABHISHEK             X5 LONDON STREETS    COMPUTER                                                                                                                                                                                                                                                          
+ISHANT               KINGs STREET DUBAI   COMPUTING                                                                                                                                                                                                                                                         
+
+SQL> SELECT ENAME,ADDRESS FROM EMPLOYEES WHERE SALARY>=100;
+
+ENAME                ADDRESS                                                                                                                                                                                                                                                                                
+-------------------- --------------------                                                                                                                                                                                                                                                                   
+ABHISHEK             X5 LONDON STREETS                                                                                                                                                                                                                                                                      
+BHAVYAA              ABC                                                                                                                                                                                                                                                                                    
+ISHANT               KINGs STREET DUBAI                                                                                                                                                                                                                                                                     
+ANKUR                ABC                                                                                                                                                                                                                                                                                    
+
+SQL> SELECT SSN,ENAME,ADDRESS FROM EMPLOYEES WHERE SALARY<=100;
+
+       SSN ENAME                ADDRESS                                                                                                                                                                                                                                                                     
+---------- -------------------- --------------------                                                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                                                                                                                                                                                                                                                                         
+     18009 ANKUR                ABC                                                                                                                                                                                                                                                                         
+
+SQL> SPOOL OFF;

@@ -1,0 +1,107 @@
+SQL> SELECT ABS(-8) FROM DUAL;
+
+   ABS(-8)                                                                                                                                                                                                                                                                                                  
+----------                                                                                                                                                                                                                                                                                                  
+         8                                                                                                                                                                                                                                                                                                  
+
+SQL> SELECT ABS(-8);
+SELECT ABS(-8)
+             *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> SSELECT * FROM EMPLOYEES;
+SP2-0734: unknown command beginning "SSELECT * ..." - rest of line ignored.
+SQL> SELECT * FROM EMPLOYEES;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18002 AARYAN               THE TAJ ESCORTS      SALES                    100000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18001 AANCHAL              BAKER STREET         SALES                     49000                                                                                                                                                                                                                        
+
+6 rows selected.
+
+SQL> SELECT (SSN) FROM EMPLOYEES;
+
+       SSN                                                                                                                                                                                                                                                                                                  
+----------                                                                                                                                                                                                                                                                                                  
+     18005                                                                                                                                                                                                                                                                                                  
+     18002                                                                                                                                                                                                                                                                                                  
+     18014                                                                                                                                                                                                                                                                                                  
+     18021                                                                                                                                                                                                                                                                                                  
+     18009                                                                                                                                                                                                                                                                                                  
+     18001                                                                                                                                                                                                                                                                                                  
+
+6 rows selected.
+
+SQL> SELECT (SSN) "ABSOLUTE" FROM EMPLOYEES;
+
+  ABSOLUTE                                                                                                                                                                                                                                                                                                  
+----------                                                                                                                                                                                                                                                                                                  
+     18005                                                                                                                                                                                                                                                                                                  
+     18002                                                                                                                                                                                                                                                                                                  
+     18014                                                                                                                                                                                                                                                                                                  
+     18021                                                                                                                                                                                                                                                                                                  
+     18009                                                                                                                                                                                                                                                                                                  
+     18001                                                                                                                                                                                                                                                                                                  
+
+6 rows selected.
+
+SQL> SELECT (ENAME) "ABSOLUTE" FROM EMPLOYEES;
+
+ABSOLUTE                                                                                                                                                                                                                                                                                                    
+--------------------                                                                                                                                                                                                                                                                                        
+ABHISHEK                                                                                                                                                                                                                                                                                                    
+AARYAN                                                                                                                                                                                                                                                                                                      
+BHAVYAA                                                                                                                                                                                                                                                                                                     
+ISHANT                                                                                                                                                                                                                                                                                                      
+ANKUR                                                                                                                                                                                                                                                                                                       
+AANCHAL                                                                                                                                                                                                                                                                                                     
+
+6 rows selected.
+
+SQL> SELECT SIN(45);
+SELECT SIN(45)
+             *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> SELECT SIN(45) FROM DUAL;
+
+   SIN(45)                                                                                                                                                                                                                                                                                                  
+----------                                                                                                                                                                                                                                                                                                  
+.850903525                                                                                                                                                                                                                                                                                                  
+
+SQL> SELECT SIN(SALARY) FROM EMPLOYEES;
+
+SIN(SALARY)                                                                                                                                                                                                                                                                                                 
+-----------                                                                                                                                                                                                                                                                                                 
+ -.70916163                                                                                                                                                                                                                                                                                                 
+ .035748798                                                                                                                                                                                                                                                                                                 
+ -.50636564                                                                                                                                                                                                                                                                                                 
+ .316282026                                                                                                                                                                                                                                                                                                 
+ -.50636564                                                                                                                                                                                                                                                                                                 
+ -.54750686                                                                                                                                                                                                                                                                                                 
+
+6 rows selected.
+
+SQL> SELECT COS(SALARY) FROM EMPLOYEES;
+
+COS(SALARY)                                                                                                                                                                                                                                                                                                 
+-----------                                                                                                                                                                                                                                                                                                 
+ .705045944                                                                                                                                                                                                                                                                                                 
+ -.99936081                                                                                                                                                                                                                                                                                                 
+ .862318872                                                                                                                                                                                                                                                                                                 
+ -.94866521                                                                                                                                                                                                                                                                                                 
+ .862318872                                                                                                                                                                                                                                                                                                 
+ -.83680119                                                                                                                                                                                                                                                                                                 
+
+6 rows selected.
+
+SQL> SPOOL OFF;

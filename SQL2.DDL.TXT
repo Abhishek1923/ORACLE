@@ -1,0 +1,169 @@
+SQL> SELECT *FROM EMPLOYEE;
+
+       SSN ENAME                ADDRESS              DEPARTMENT                 
+---------- -------------------- -------------------- --------------------       
+    SALARY DOB                                                                  
+---------- -----------                                                          
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                   
+     96000                                                                      
+                                                                                
+     18002 AARYAN               THE TAJ ESCORTS      SALES                      
+    100000                                                                      
+                                                                                
+     18014 BHAVYAA              ABC                  MARKETING                  
+       100                                                                      
+                                                                                
+
+       SSN ENAME                ADDRESS              DEPARTMENT                 
+---------- -------------------- -------------------- --------------------       
+    SALARY DOB                                                                  
+---------- -----------                                                          
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                  
+    900000                                                                      
+                                                                                
+     18009 ANKUR                ABC                  MARKETING                  
+       100                                                                      
+                                                                                
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                   
+     96000 01-01-2001                                                           
+                                                                                
+
+       SSN ENAME                ADDRESS              DEPARTMENT                 
+---------- -------------------- -------------------- --------------------       
+    SALARY DOB                                                                  
+---------- -----------                                                          
+     18002 AARYAN               THE TAJ ESCORTS      SALES                      
+    100000 02-01-2001                                                           
+                                                                                
+     18014 BHAVYAA              ABC                  MARKETING                  
+       100 03-01-2001                                                           
+                                                                                
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                  
+    900000 04-01-2001                                                           
+                                                                                
+
+       SSN ENAME                ADDRESS              DEPARTMENT                 
+---------- -------------------- -------------------- --------------------       
+    SALARY DOB                                                                  
+---------- -----------                                                          
+     18009 ANKUR                ABC                  MARKETING                  
+       100 05-01-2001                                                           
+                                                                                
+
+10 rows selected.
+
+SQL> SET LINESIZE 300;
+SQL> SELECT *FROM EMPLOYEE;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY DOB                                                                                                                                                                                                                    
+---------- -------------------- -------------------- -------------------- ---------- -----------                                                                                                                                                                                                            
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18002 AARYAN               THE TAJ ESCORTS      SALES                    100000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000 01-01-2001                                                                                                                                                                                                             
+     18002 AARYAN               THE TAJ ESCORTS      SALES                    100000 02-01-2001                                                                                                                                                                                                             
+     18014 BHAVYAA              ABC                  MARKETING                   100 03-01-2001                                                                                                                                                                                                             
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000 04-01-2001                                                                                                                                                                                                             
+     18009 ANKUR                ABC                  MARKETING                   100 05-01-2001                                                                                                                                                                                                             
+
+10 rows selected.
+
+SQL> /
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY DOB                                                                                                                                                                                                                    
+---------- -------------------- -------------------- -------------------- ---------- -----------                                                                                                                                                                                                            
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18002 AARYAN               THE TAJ ESCORTS      SALES                    100000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000 01-01-2001                                                                                                                                                                                                             
+     18002 AARYAN               THE TAJ ESCORTS      SALES                    100000 02-01-2001                                                                                                                                                                                                             
+     18014 BHAVYAA              ABC                  MARKETING                   100 03-01-2001                                                                                                                                                                                                             
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000 04-01-2001                                                                                                                                                                                                             
+     18009 ANKUR                ABC                  MARKETING                   100 05-01-2001                                                                                                                                                                                                             
+
+10 rows selected.
+
+SQL> SELECT AVG (SALARY) FROM EMPLOYEE;
+
+AVG(SALARY)                                                                                                                                                                                                                                                                                                 
+-----------                                                                                                                                                                                                                                                                                                 
+     219240                                                                                                                                                                                                                                                                                                 
+
+SQL> SELECT COUNT (ENAME) FROM EMPLOYEE;
+
+COUNT(ENAME)                                                                                                                                                                                                                                                                                                
+------------                                                                                                                                                                                                                                                                                                
+          10                                                                                                                                                                                                                                                                                                
+
+SQL> SELECT SUM (SALARY) FROM EMPLOYEE;
+
+SUM(SALARY)                                                                                                                                                                                                                                                                                                 
+-----------                                                                                                                                                                                                                                                                                                 
+    2192400                                                                                                                                                                                                                                                                                                 
+SQL> DELETE FROM EMPLOYEE WHERE DOB='01-01-2001';
+
+1 row deleted.
+
+SQL> DELETE FROM EMPLOYEE WHERE DOB='02-01-2001';
+
+1 row deleted.
+
+SQL> DELETE FROM EMPLOYEE WHERE DOB='03-01-2001';
+
+1 row deleted.
+
+SQL> DELETE FROM EMPLOYEE WHERE DOB='04-01-2001';
+
+1 row deleted.
+
+SQL> DELETE FROM EMPLOYEE WHERE DOB='05-01-2001';
+
+1 row deleted.
+
+SQL> DESC EMPLOYEE;
+ Name                                                                                                                                                                          Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------- --------------------------------------------------------------------------------------------------------------------
+ SSN                                                                                                                                                                                    NUMBER(8)
+ ENAME                                                                                                                                                                                  VARCHAR2(20)
+ ADDRESS                                                                                                                                                                                VARCHAR2(20)
+ DEPARTMENT                                                                                                                                                                             VARCHAR2(20)
+ SALARY                                                                                                                                                                                 NUMBER(10)
+ DOB                                                                                                                                                                                    VARCHAR2(11)
+
+SQL> SELECT *FROM EMPLOYEE;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY DOB                                                                                                                                                                                                                    
+---------- -------------------- -------------------- -------------------- ---------- -----------                                                                                                                                                                                                            
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18002 AARYAN               THE TAJ ESCORTS      SALES                    100000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+
+SQL> DROP COLUMN DOB;
+DROP COLUMN DOB
+     *
+ERROR at line 1:
+ORA-00950: invalid DROP option 
+
+
+SQL> ALTER TABLE EMPLOYEE
+  2   DROP COLUMN DOB;
+
+Table altered.
+
+SQL> SELECT * FROM EMPLOYEE;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18002 AARYAN               THE TAJ ESCORTS      SALES                    100000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+
+SQL> SPOOL OFF;

@@ -1,0 +1,60 @@
+SQL> SELECT * FROM EMPLOYEES;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18002 AARYAN               THE TAJ ESCORTS      SALES                    100000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18001 AANCHAL              BAKER STREET         SALES                     49000                                                                                                                                                                                                                        
+
+6 rows selected.
+
+SQL> SAVEPOINT SP1;
+
+Savepoint created.
+
+SQL> DELETE FROM EMPLOYEES WHERE SSN=18001;
+
+1 row deleted.
+
+SQL> SAVEPOINT SP2;
+
+Savepoint created.
+
+SQL> DELETE FROM EMPLOYEES WHERE SSN=18009;
+
+1 row deleted.
+
+SQL> SAVEPOINT SP3;
+
+Savepoint created.
+
+SQL> DELETE FROM EMPLOYEES WHERE SSN=18005;
+
+1 row deleted.
+
+SQL> SELECT * FROM EMPLOYEES;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18002 AARYAN               THE TAJ ESCORTS      SALES                    100000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+
+SQL> ROLLBACK TO SP2;
+
+Rollback complete.
+
+SQL> SELECT * FROM EMPLOYEES;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18002 AARYAN               THE TAJ ESCORTS      SALES                    100000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+
+SQL> SPOOL OFF;

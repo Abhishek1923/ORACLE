@@ -1,0 +1,52 @@
+SQL> SELECT LTRIM ('ABC','A') FROM DUAL;
+
+LT                                                                                                                                                                                                                                                                                                          
+--                                                                                                                                                                                                                                                                                                          
+BC                                                                                                                                                                                                                                                                                                          
+
+SQL> SELECT LTRIM ('ENAME','A') FROM EMPLOYEES;
+
+LTRIM                                                                                                                                                                                                                                                                                                       
+-----                                                                                                                                                                                                                                                                                                       
+ENAME                                                                                                                                                                                                                                                                                                       
+ENAME                                                                                                                                                                                                                                                                                                       
+ENAME                                                                                                                                                                                                                                                                                                       
+ENAME                                                                                                                                                                                                                                                                                                       
+ENAME                                                                                                                                                                                                                                                                                                       
+ENAME                                                                                                                                                                                                                                                                                                       
+
+6 rows selected.
+
+SQL> SELECT LTRIM (ENAME,'A') FROM EMPLOYEES;
+
+LTRIM(ENAME,'A')                                                                                                                                                                                                                                                                                            
+--------------------                                                                                                                                                                                                                                                                                        
+BHISHEK                                                                                                                                                                                                                                                                                                     
+RYAN                                                                                                                                                                                                                                                                                                        
+BHAVYAA                                                                                                                                                                                                                                                                                                     
+ISHANT                                                                                                                                                                                                                                                                                                      
+NKUR                                                                                                                                                                                                                                                                                                        
+NCHAL                                                                                                                                                                                                                                                                                                       
+
+6 rows selected.
+
+SQL> SELECT RTRIM ('ABC','C') FROM DUAL;
+
+RT                                                                                                                                                                                                                                                                                                          
+--                                                                                                                                                                                                                                                                                                          
+AB                                                                                                                                                                                                                                                                                                          
+
+SQL> SELECT RTRIM (ENAME,'A') FROM EMPLOYEES;
+
+RTRIM(ENAME,'A')                                                                                                                                                                                                                                                                                            
+--------------------                                                                                                                                                                                                                                                                                        
+ABHISHEK                                                                                                                                                                                                                                                                                                    
+AARYAN                                                                                                                                                                                                                                                                                                      
+BHAVY                                                                                                                                                                                                                                                                                                       
+ISHANT                                                                                                                                                                                                                                                                                                      
+ANKUR                                                                                                                                                                                                                                                                                                       
+AANCHAL                                                                                                                                                                                                                                                                                                     
+
+6 rows selected.
+
+SQL> SPOOL OFF;

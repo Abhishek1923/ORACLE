@@ -1,0 +1,82 @@
+SQL> SELECT * FROM EMPLOYEE;
+
+       SSN ENAME                ADDRESS              DEPARTMENT                 
+---------- -------------------- -------------------- --------------------       
+    SALARY                                                                      
+----------                                                                      
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                   
+     96000                                                                      
+                                                                                
+     18002 AARYAN               THE TAJ ESCORTS      SALES                      
+    100000                                                                      
+                                                                                
+     18014 BHAVYAA              ABC                  MARKETING                  
+       100                                                                      
+                                                                                
+
+       SSN ENAME                ADDRESS              DEPARTMENT                 
+---------- -------------------- -------------------- --------------------       
+    SALARY                                                                      
+----------                                                                      
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                  
+    900000                                                                      
+                                                                                
+     18009 ANKUR                ABC                  MARKETING                  
+       100                                                                      
+                                                                                
+
+SQL> SET LINESIZE 300;
+SQL> SELECT * FROM EMPLOYEE;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18002 AARYAN               THE TAJ ESCORTS      SALES                    100000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+
+SQL> ALTER TABLE EMPLOYEE
+  2  MODIFY (SALARY NUMBER(10))
+  3  ;
+
+Table altered.
+
+SQL> DESC EMPLOYEE;
+ Name                                                                                                                                                                          Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------- --------------------------------------------------------------------------------------------------------------------
+ SSN                                                                                                                                                                                    NUMBER(8)
+ ENAME                                                                                                                                                                                  VARCHAR2(20)
+ ADDRESS                                                                                                                                                                                VARCHAR2(20)
+ DEPARTMENT                                                                                                                                                                             VARCHAR2(20)
+ SALARY                                                                                                                                                                                 NUMBER(10)
+
+SQL> RENAME EMPLOYEE TO EMPLOYEES;
+
+Table renamed.
+
+SQL> DESC EMPLOYEES;
+ Name                                                                                                                                                                          Null?    Type
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------- --------------------------------------------------------------------------------------------------------------------
+ SSN                                                                                                                                                                                    NUMBER(8)
+ ENAME                                                                                                                                                                                  VARCHAR2(20)
+ ADDRESS                                                                                                                                                                                VARCHAR2(20)
+ DEPARTMENT                                                                                                                                                                             VARCHAR2(20)
+ SALARY                                                                                                                                                                                 NUMBER(10)
+
+SQL> SELECT * FROM EMPLOYEES;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18002 AARYAN               THE TAJ ESCORTS      SALES                    100000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+
+SQL> INSERT INTO EMPLOYEES
+  2  VALUES (18001,'AANCHAL', 'BAKER STREET','SALES',49000);
+
+1 row created.
+
+SQL> SPOOL OFF;

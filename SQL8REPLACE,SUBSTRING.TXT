@@ -1,0 +1,59 @@
+SQL> SELECT REPLACE ('BHAVYA','V','D') FROM DUAL;
+
+REPLAC                                                                                                                                                                                                                                                                                                      
+------                                                                                                                                                                                                                                                                                                      
+BHADYA                                                                                                                                                                                                                                                                                                      
+
+SQL> SELECT REPLACE ('ENAME','A','D') FROM EMPLOYEES;
+
+REPLA                                                                                                                                                                                                                                                                                                       
+-----                                                                                                                                                                                                                                                                                                       
+ENDME                                                                                                                                                                                                                                                                                                       
+ENDME                                                                                                                                                                                                                                                                                                       
+ENDME                                                                                                                                                                                                                                                                                                       
+ENDME                                                                                                                                                                                                                                                                                                       
+ENDME                                                                                                                                                                                                                                                                                                       
+ENDME                                                                                                                                                                                                                                                                                                       
+
+6 rows selected.
+
+SQL> SELECT REPLACE (ENAME,'A','D') FROM EMPLOYEES;
+
+REPLACE(ENAME,'A','D                                                                                                                                                                                                                                                                                        
+--------------------                                                                                                                                                                                                                                                                                        
+DBHISHEK                                                                                                                                                                                                                                                                                                    
+DDRYDN                                                                                                                                                                                                                                                                                                      
+BHDVYDD                                                                                                                                                                                                                                                                                                     
+ISHDNT                                                                                                                                                                                                                                                                                                      
+DNKUR                                                                                                                                                                                                                                                                                                       
+DDNCHDL                                                                                                                                                                                                                                                                                                     
+
+6 rows selected.
+
+SQL> SELECT SUBSTRING ('BHAVYA',2,4) FROM DUAL;
+SELECT SUBSTRING ('BHAVYA',2,4) FROM DUAL
+       *
+ERROR at line 1:
+ORA-00904: "SUBSTRING": invalid identifier 
+
+
+SQL> SELECT SUBSTR('BHAVYA',2,4) FROM DUAL;
+
+SUBS                                                                                                                                                                                                                                                                                                        
+----                                                                                                                                                                                                                                                                                                        
+HAVY                                                                                                                                                                                                                                                                                                        
+
+SQL> SELECT SUBSTR(ENAME,1,6) FROM EMPLOYEES;
+
+SUBSTR(ENAME,1,6)                                                                                                                                                                                                                                                                                           
+------------------------                                                                                                                                                                                                                                                                                    
+ABHISH                                                                                                                                                                                                                                                                                                      
+AARYAN                                                                                                                                                                                                                                                                                                      
+BHAVYA                                                                                                                                                                                                                                                                                                      
+ISHANT                                                                                                                                                                                                                                                                                                      
+ANKUR                                                                                                                                                                                                                                                                                                       
+AANCHA                                                                                                                                                                                                                                                                                                      
+
+6 rows selected.
+
+SQL> SPOOL OFF;

@@ -1,0 +1,110 @@
+SQL> SELECT MOD (10,3) AS FIRST,MOD(3,4) AS SECOND FROM DUAL;
+
+     FIRST     SECOND                                                                                                                                                                                                                                                                                       
+---------- ----------                                                                                                                                                                                                                                                                                       
+         1          3                                                                                                                                                                                                                                                                                       
+
+SQL> SELECT * FROM EMPLOYEES;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18002 AARYAN               THE TAJ ESCORTS      SALES                    100000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18001 AANCHAL              BAKER STREET         SALES                     49000                                                                                                                                                                                                                        
+
+6 rows selected.
+
+SQL> SELECT MOD(SALARY,100000) FROM EMPLOYEES;
+
+MOD(SALARY,100000)                                                                                                                                                                                                                                                                                          
+------------------                                                                                                                                                                                                                                                                                          
+             96000                                                                                                                                                                                                                                                                                          
+                 0                                                                                                                                                                                                                                                                                          
+               100                                                                                                                                                                                                                                                                                          
+                 0                                                                                                                                                                                                                                                                                          
+               100                                                                                                                                                                                                                                                                                          
+             49000                                                                                                                                                                                                                                                                                          
+
+6 rows selected.
+
+SQL> SELECT POWER(3,5) FROM DUAL;
+
+POWER(3,5)                                                                                                                                                                                                                                                                                                  
+----------                                                                                                                                                                                                                                                                                                  
+       243                                                                                                                                                                                                                                                                                                  
+
+SQL> SELECT POWER(SSN,5) FROM EMPLOYEES;
+
+POWER(SSN,5)                                                                                                                                                                                                                                                                                                
+------------                                                                                                                                                                                                                                                                                                
+  1.8922E+21                                                                                                                                                                                                                                                                                                
+  1.8906E+21                                                                                                                                                                                                                                                                                                
+  1.8969E+21                                                                                                                                                                                                                                                                                                
+  1.9006E+21                                                                                                                                                                                                                                                                                                
+  1.8943E+21                                                                                                                                                                                                                                                                                                
+  1.8901E+21                                                                                                                                                                                                                                                                                                
+
+6 rows selected.
+
+SQL> SELECT POWER(SSN,5) "POWER" FROM EMPLOYEES;
+
+     POWER                                                                                                                                                                                                                                                                                                  
+----------                                                                                                                                                                                                                                                                                                  
+1.8922E+21                                                                                                                                                                                                                                                                                                  
+1.8906E+21                                                                                                                                                                                                                                                                                                  
+1.8969E+21                                                                                                                                                                                                                                                                                                  
+1.9006E+21                                                                                                                                                                                                                                                                                                  
+1.8943E+21                                                                                                                                                                                                                                                                                                  
+1.8901E+21                                                                                                                                                                                                                                                                                                  
+
+6 rows selected.
+
+SQL> SELECT SQRT(25) FROM DUAL;
+
+  SQRT(25)                                                                                                                                                                                                                                                                                                  
+----------                                                                                                                                                                                                                                                                                                  
+         5                                                                                                                                                                                                                                                                                                  
+
+SQL> SELECT SQRT(SALARY) FROM EMPLOYEES;;
+SELECT SQRT(SALARY) FROM EMPLOYEES;
+                                  *
+ERROR at line 1:
+ORA-00911: invalid character 
+
+
+SQL> SELECT SQRT(SALARY) FROM EMPLOYEES;
+
+SQRT(SALARY)                                                                                                                                                                                                                                                                                                
+------------                                                                                                                                                                                                                                                                                                
+  309.838668                                                                                                                                                                                                                                                                                                
+  316.227766                                                                                                                                                                                                                                                                                                
+          10                                                                                                                                                                                                                                                                                                
+  948.683298                                                                                                                                                                                                                                                                                                
+          10                                                                                                                                                                                                                                                                                                
+  221.359436                                                                                                                                                                                                                                                                                                
+
+6 rows selected.
+
+SQL> SELECT SQRT(SALARY) AS SQUARE_ROOT FROM EMPLOYEES;
+
+SQUARE_ROOT                                                                                                                                                                                                                                                                                                 
+-----------                                                                                                                                                                                                                                                                                                 
+ 309.838668                                                                                                                                                                                                                                                                                                 
+ 316.227766                                                                                                                                                                                                                                                                                                 
+         10                                                                                                                                                                                                                                                                                                 
+ 948.683298                                                                                                                                                                                                                                                                                                 
+         10                                                                                                                                                                                                                                                                                                 
+ 221.359436                                                                                                                                                                                                                                                                                                 
+
+6 rows selected.
+
+SQL> SELECT TRUNC(32.2654),TRUNC(256.3635643) FROM DUAL;
+
+TRUNC(32.2654) TRUNC(256.3635643)                                                                                                                                                                                                                                                                           
+-------------- ------------------                                                                                                                                                                                                                                                                           
+            32                256                                                                                                                                                                                                                                                                           
+
+SQL> SPOOL OFF;

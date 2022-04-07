@@ -1,0 +1,98 @@
+SQL> SELECT LENGTH('ABHISHEK') FROM DUAL;
+
+LENGTH('ABHISHEK')                                                                                                                                                                                                                                                                                          
+------------------                                                                                                                                                                                                                                                                                          
+                 8                                                                                                                                                                                                                                                                                          
+
+SQL> SELECT * FROM EMPLOYEES;
+
+       SSN ENAME                ADDRESS              DEPARTMENT               SALARY                                                                                                                                                                                                                        
+---------- -------------------- -------------------- -------------------- ----------                                                                                                                                                                                                                        
+     18005 ABHISHEK             X5 LONDON STREETS    COMPUTER                  96000                                                                                                                                                                                                                        
+     18002 AARYAN               THE TAJ ESCORTS      SALES                    100000                                                                                                                                                                                                                        
+     18014 BHAVYAA              ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18021 ISHANT               KINGs STREET DUBAI   COMPUTING                900000                                                                                                                                                                                                                        
+     18009 ANKUR                ABC                  MARKETING                   100                                                                                                                                                                                                                        
+     18001 AANCHAL              BAKER STREET         SALES                     49000                                                                                                                                                                                                                        
+
+6 rows selected.
+
+SQL> SELECT LENGTH (ENMAE) FROM EMPLOYEES;
+SELECT LENGTH (ENMAE) FROM EMPLOYEES
+               *
+ERROR at line 1:
+ORA-00904: "ENMAE": invalid identifier 
+
+
+SQL> SELECT LENGTH (ENAME) FROM EMPLOYEES;
+
+LENGTH(ENAME)                                                                                                                                                                                                                                                                                               
+-------------                                                                                                                                                                                                                                                                                               
+            8                                                                                                                                                                                                                                                                                               
+            6                                                                                                                                                                                                                                                                                               
+            7                                                                                                                                                                                                                                                                                               
+            6                                                                                                                                                                                                                                                                                               
+            5                                                                                                                                                                                                                                                                                               
+            7                                                                                                                                                                                                                                                                                               
+
+6 rows selected.
+
+SQL> SELECT CONCAT('ABHISHEK','KUMAR') FROM DUAL;
+
+CONCAT('ABHIS                                                                                                                                                                                                                                                                                               
+-------------                                                                                                                                                                                                                                                                                               
+ABHISHEKKUMAR                                                                                                                                                                                                                                                                                               
+
+SQL> SELECT CONCAT(SSN,ENAME) FROM EMPLOYEES;
+
+CONCAT(SSN,ENAME)                                                                                                                                                                                                                                                                                           
+------------------------------------------------------------                                                                                                                                                                                                                                                
+18005ABHISHEK                                                                                                                                                                                                                                                                                               
+18002AARYAN                                                                                                                                                                                                                                                                                                 
+18014BHAVYAA                                                                                                                                                                                                                                                                                                
+18021ISHANT                                                                                                                                                                                                                                                                                                 
+18009ANKUR                                                                                                                                                                                                                                                                                                  
+18001AANCHAL                                                                                                                                                                                                                                                                                                
+
+6 rows selected.
+
+SQL> SELECT CHAR ('97') FROM DUAL;
+SELECT CHAR ('97') FROM DUAL
+       *
+ERROR at line 1:
+ORA-00936: missing expression 
+
+
+SQL> SELECT CHR ('97') FROM DUAL;
+
+C                                                                                                                                                                                                                                                                                                           
+-                                                                                                                                                                                                                                                                                                           
+a                                                                                                                                                                                                                                                                                                           
+
+SQL> SELECT CHR(SSN) FRON EMPLOYEES;
+SELECT CHR(SSN) FRON EMPLOYEES
+                     *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> SELECT CHR(SSN) FROM EMPLOYEES;
+
+CHR(                                                                                                                                                                                                                                                                                                        
+----                                                                                                                                                                                                                                                                                                        
+FU                                                                                                                                                                                                                                                                                                          
+FR                                                                                                                                                                                                                                                                                                          
+F^                                                                                                                                                                                                                                                                                                          
+Fe                                                                                                                                                                                                                                                                                                          
+FY                                                                                                                                                                                                                                                                                                          
+FQ                                                                                                                                                                                                                                                                                                          
+
+6 rows selected.
+
+SQL> SELECT CHR('19') FROM DUAL;
+
+C                                                                                                                                                                                                                                                                                                           
+-                                                                                                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                                                                                           
+
+SQL> SPOOL OFF;
